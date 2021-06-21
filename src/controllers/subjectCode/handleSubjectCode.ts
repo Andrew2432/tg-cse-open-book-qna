@@ -35,16 +35,11 @@ function handleSubjectCode(
       },
       function (err, data) {
         if (err) throw err;
-        bot.sendMessage(msg.chat.id, "We will send the question paper", {
-          reply_markup: {
-            remove_keyboard: true,
-          },
-        });
-        return bot.sendDocument(msg.chat.id, data.Body as Buffer);
+        bot.sendDocument(msg.chat.id, data.Body as Buffer);
       }
     );
 
-    return bot.sendMessage(msg.chat.id, "Some error occurred", {
+    return bot.sendMessage(msg.chat.id, "We will send the question paper", {
       reply_markup: {
         remove_keyboard: true,
       },
