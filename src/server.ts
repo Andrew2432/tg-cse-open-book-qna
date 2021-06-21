@@ -1,10 +1,12 @@
+// import fs from "fs";
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import TelegramBot from "node-telegram-bot-api";
 import UserState from "./state/UserState";
 
-import handleRequest from "./handlers";
+import handleRequest from "./controllers";
+// import s3 from "./services/s3/s3.service";
 
 (async () => {
   dotenv.config();
@@ -21,7 +23,21 @@ import handleRequest from "./handlers";
     app.use(cors());
 
     app.get("/", (_, res) => {
-      res.status(200).send("Hello World");
+      //   const file = fs.readFileSync(__dirname + "/data/MG8591.pdf");
+
+      //   s3.upload(
+      //     {
+      //       Bucket: process.env["AWS_S3_BUCKET_NAME"] as string,
+      //       Key: "MG8591.pdf",
+      //       Body: file,
+      //     },
+      //     function (err, data) {
+      //       if (err) throw err;
+      //       console.log(data);
+      //     }
+      //   );
+
+      return res.status(200).send("Hello");
     });
 
     bot.on("message", (msg) => {
