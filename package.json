@@ -1,0 +1,28 @@
+{
+  "name": "tg-bot-au",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "node-telegram-bot-api": "^0.53.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.10",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.12",
+    "@types/node-telegram-bot-api": "^0.51.1",
+    "nodemon": "^2.0.7",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.4"
+  },
+  "scripts": {
+    "watch": "tsc --watch",
+    "build:dev": "nodemon --exec npm run start:dev",
+    "start:dev": "ts-node src/server.ts",
+    "build": "nodemon --exec npm run start",
+    "start": "node dist/server.js"
+  }
+}
