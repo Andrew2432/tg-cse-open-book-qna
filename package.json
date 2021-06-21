@@ -22,6 +22,7 @@
   },
   "scripts": {
     "watch": "tsc --watch",
+    "build:docker": "tsc",
     "build:dev": "nodemon --exec npm run start:dev",
     "start:dev": "ts-node src/server.ts",
     "build": "nodemon --exec npm run start",
